@@ -56,6 +56,11 @@ annotationProcessor 스코프 : annotationProcessor 스코프는 어노테이션
     // HikariCP : Connection 생성 위한 커넥션 풀.
     // https://mvnrepository.com/artifact/com.zaxxer/HikariCP
     implementation group: 'com.zaxxer', name: 'HikariCP', version: '5.1.0'
+
+    //ModelMapper : getter/setter 등을 이용해서 객체의 정보를 다른 객체로 복사하는 기능.
+// https://mvnrepository.com/artifact/org.modelmapper/modelmapper
+    implementation group: 'org.modelmapper', name: 'modelmapper', version: '3.2.0'
+
 }
 
 test {

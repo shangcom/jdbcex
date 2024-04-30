@@ -7,7 +7,7 @@ import java.sql.Connection;
 
 public enum ConnectionUtil {
 
-    Instance;
+    INSTANCE;
 
     private HikariDataSource ds;
 
