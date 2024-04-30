@@ -44,6 +44,22 @@ public class TodoDAO {
         return now;
     }
 
+    public void insert(TodoVO todoVO) throws Exception {
+        String sql = "insert into tbl_todo (title, dueDate, finished) values(?, ?, ?)";
+
+        @Cleanup
+        Connection connection = ConnectionUtil.INSTANCE.getConnection();
+
+        @Cleanup
+        PreparedStatement preparedStatement = connection.prepareStatement(sql);
+
+        preparedStatement.setString(1, todoVO.getTitle());
+        preparedStatement.setDate(2, Date.valueOf(todoVO.getDueDate()));
+        preparedStatement.setBoolean(3, todoVO.isFinished());
+
+        preparedStatement.executeUpdate();
+    }
+
     public List<TodoVO> selectAll() throws Exception {
 
         String sql = "Select * from tbl_todo";
@@ -114,9 +130,9 @@ public class TodoDAO {
         PreparedStatement preparedStatement = connection.prepareStatement(sql);
 
         preparedStatement.setString(1, todoVO.getTitle());
-        preparedStatement.setDate(2,Date.valueOf(todoVO.getDueDate()));
+        preparedStatement.setDate(2, Date.valueOf(todoVO.getDueDate()));
         preparedStatement.setBoolean(3, todoVO.isFinished());
-        preparedStatement.setLong(4,todoVO.getTno());
+        preparedStatement.setLong(4, todoVO.getTno());
         preparedStatement.executeUpdate();
     }
 }

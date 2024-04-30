@@ -23,6 +23,15 @@ public class TodoDAOTest {
     }
 
     @Test
+    public void testInsert() throws Exception {
+        TodoVO todoVO = TodoVO.builder()
+                .title("Insert() 테스트........")
+                .dueDate(LocalDate.of(2024, 12, 31))
+                .build();
+        todoDAO.insert(todoVO);
+    }
+
+    @Test
     public void testList() throws Exception {
         List<TodoVO> list = todoDAO.selectAll();
         list.forEach(vo -> System.out.println(vo));
@@ -38,8 +47,8 @@ public class TodoDAOTest {
 
     @Test
     public void testDeleteOne() throws Exception {
-    Long tno = 5L;
-    todoDAO.deleteOne(tno);
+        Long tno = 5L;
+        todoDAO.deleteOne(tno);
     }
 
     @Test
