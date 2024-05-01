@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 import java.sql.Connection;
 import java.sql.DriverManager;
 
-public class ConnectTest {
+public class ConnectTests {
     @Test
     public void test1() {
         int v1 = 10;
