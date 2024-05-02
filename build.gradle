@@ -71,8 +71,9 @@ annotationProcessor 스코프 : annotationProcessor 스코프는 어노테이션
     testImplementation group: 'org.apache.logging.log4j', name: 'log4j-slf4j-impl', version: '2.23.1'
 
     //jstl
-// https://mvnrepository.com/artifact/jakarta.servlet.jsp.jstl/jakarta.servlet.jsp.jstl-api
-    implementation group: 'jakarta.servlet.jsp.jstl', name: 'jakarta.servlet.jsp.jstl-api', version: '3.0.0'
+// https://mvnrepository.com/artifact/javax.servlet/jstl
+    implementation group: 'javax.servlet', name: 'jstl', version: '1.2'
+
 
 }
 
