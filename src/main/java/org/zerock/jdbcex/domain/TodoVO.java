@@ -1,5 +1,6 @@
 package org.zerock.jdbcex.domain;
 
+
 import lombok.*;
 
 import java.time.LocalDate;

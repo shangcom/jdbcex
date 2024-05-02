@@ -1,5 +1,6 @@
 package org.zerock.jdbcex.dto;
 
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -9,7 +10,7 @@ import java.time.LocalDate;
 
 @Builder
 @AllArgsConstructor
-@Data // Getter, Setter, toString, equals 포함. 
+@Data // Getter, Setter, toString, equals 포함.
 @NoArgsConstructor
 public class TodoDTO {
 
