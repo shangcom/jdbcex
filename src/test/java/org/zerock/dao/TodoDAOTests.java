@@ -38,7 +38,8 @@ public class TodoDAOTests {
 
     @Test
     public void testSelectOne() throws Exception {
-        Long tno = 53L; // 없는 tno 번호로 하면 java.sql.SQLDataException: wrong row position
+        Long tno = 1L;
+//        Long tno = 5L; // 없는 tno 번호로 하면 java.sql.SQLDataException: wrong row position
 
         TodoVO vo = todoDAO.selectOne(tno);
         System.out.println(vo);
@@ -46,14 +47,14 @@ public class TodoDAOTests {
 
     @Test
     public void testDeleteOne() throws Exception {
-        Long tno = 5L;
+        Long tno = 2L;
         todoDAO.deleteOne(tno);
     }
 
     @Test
     public void testUpdateOne() throws Exception {
         TodoVO todoVO = TodoVO.builder()
-                .tno(15L)
+                .tno(1L)
                 .title("update test...")
                 .dueDate(LocalDate.of(2033, 12, 31))
                 .finished(true)

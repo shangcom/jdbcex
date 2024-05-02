@@ -30,7 +30,7 @@ public enum TodoService {
         dao.insert(todoVO);
     }
 
-    public List<TodoDTO> listAll()throws Exception {
+    public List<TodoDTO> listAll() throws Exception {
 
         List<TodoVO> voList = dao.selectAll();
 
@@ -38,10 +38,21 @@ public enum TodoService {
         log.info("TodoService - listAll()의 voList() : " + voList);
 
         List<TodoDTO> dtoList = voList.stream()
-                .map(vo -> modelMapper.map(vo,TodoDTO.class))
+                .map(vo -> modelMapper.map(vo, TodoDTO.class))
                 .collect(Collectors.toList());
 
         return dtoList;
     }
+
+    public TodoDTO get(Long tno) throws Exception {
+        log.info("TodoService geT(" + tno + ")에서 dao.selectOne(tno) 호출..............");
+        TodoVO todoVO = dao.selectOne(tno);
+        log.info("todoVO : " + todoVO);
+
+        TodoDTO todoDTO = modelMapper.map(todoVO, TodoDTO.class);
+
+        return todoDTO;
+    }
+
 
 }
