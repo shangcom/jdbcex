@@ -1,8 +1,6 @@
 package org.zerock.jdbcex.controller;
 
 import lombok.extern.log4j.Log4j2;
-import org.zerock.jdbcex.dao.TodoDAO;
-import org.zerock.jdbcex.domain.TodoVO;
 import org.zerock.jdbcex.dto.TodoDTO;
 import org.zerock.jdbcex.service.TodoService;
 
@@ -17,7 +15,7 @@ import java.io.IOException;
 @Log4j2
 public class TodoReadController extends HttpServlet {
 
-    private TodoService todoService;
+    private TodoService todoService = TodoService.INSTANCE; // 바로 초기화 시켜줘야 한다.
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
