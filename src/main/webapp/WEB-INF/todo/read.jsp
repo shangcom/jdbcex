@@ -25,8 +25,8 @@
     <input type="checkbox" name="finished" value="${dto.finished ? "checked": ""}" readonly>
 </div>
 <div>
-    <a href="/doto/modify?tno=${dto.tno}">수정/삭제</a>
-    <a href="todo/list">리스트로 돌아가기</a>
+    <a href="/todo/modify?tno=${dto.tno}">수정/삭제</a>
+    <a href="/todo/list">리스트로 돌아가기</a>
 </div>
 </body>
 </html>
